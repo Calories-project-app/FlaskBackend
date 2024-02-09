@@ -148,3 +148,81 @@ food_translation_simplified = {
     "zucchine_impanate": "zucchini dish",
     "zucchine_umido": "zucchini dish",
 }
+
+
+calories_per_sq_inch = {
+    "arrosto": {
+        "calories": 155,
+        "protein": 2,
+        "carbs": 0,
+        "fat": 1,
+    },
+    "arrosto_di_vitello": {
+        "calories": 155,
+        "protein": 2,
+        "carbs": 0,
+        "fat": 1,
+    },
+    "bruscitt": {
+        "calories": 310,
+        "protein": 2,
+        "carbs": 0,
+        "fat": 1,
+    },
+    "carote": 0.4,
+    "cavolfiore": 0.3,
+    "cibo_bianco_non_identificato": 1.5,  # Arbitrary value
+    "cotoletta": 12,  # Fried meat, assuming higher because of frying
+    "crema_zucca_e_fagioli": 1.2,  # Cream soup, lighter
+    "fagiolini": 0.4,
+    "finocchi_gratinati": 0.7,  # Adjusted down for a vegetable dish
+    "finocchi_in_umido": 0.7,  # Similarly adjusted
+    "focaccia_bianca": 2.0,  # Bread, assuming a bit denser
+    "guazzetto_di_calamari": 1.5,  # Seafood, lighter
+    "insalata_mista": 0.2,  # Very light, mostly water content
+    "lasagna_alla_bolognese": 9,  # Pasta dish, but with layers and meat
+    "mandarini": 0.5,
+    "medaglioni_di_carne": 8,
+    "mele": 0.5,
+    "merluzzo_alle_olive": 1.7,  # Fish dish, assuming lighter than meat
+    "minestra": 1.0,  # Soup, lighter
+    "minestra_lombarda": 1.1,  # Similar to above
+    "orecchiette_-ragu-": 3.5,  # Pasta, as per your guideline
+    "passato_alla_piemontese": 1.1,
+    "pasta_bianco": 3.5,  # Aligning with your pasta calorie density
+    "pasta_cozze_e_vongole": 3.5,
+    "pasta_e_ceci": 3.5,
+    "pasta_e_fagioli": 3.5,
+    "pasta_mare_e_monti": 3.5,
+    "pasta_pancetta_e_zucchine": 3.5,
+    "pasta_pesto_besciamella_e_cornetti": 3.5,
+    "pasta_ricotta_e_salsiccia": 3.5,
+    "pasta_sugo": 3.5,
+    "pasta_sugo_pesce": 3.5,
+    "pasta_sugo_vegetariano": 3.5,
+    "pasta_tonno": 3.5,
+    "pasta_tonno_e_piselli": 3.5,
+    "pasta_zafferano_e_piselli": 3.5,
+    "patate-pure": 1.3,  # Mashed potatoes, assuming lighter
+    "patate-pure_prosciutto": 1.5,
+    "patatine_fritte": 2.2,  # Fries, assuming the oil adds calories
+    "pere": 0.5,
+    "pesce_-filetto-": 1.7,
+    "pesce_2_-filetto-": 1.7,
+    "piselli": 0.4,
+    "pizza": 2.5,  # Assuming a higher density because of toppings
+    "pizzoccheri": 3.5,  # Pasta dish
+    "polpette_di_carne": 6,
+    "riso_bianco": 1.2,  # Rice, assuming it's less dense than pasta
+    "riso_sugo": 1.4,
+    "roastbeef": 2.5,
+    "rosbeef": 2.5,
+    "rucola": 0.1,
+    "salmone_-da_menu_sembra_spada_in_realta-": 1.8,
+    "scaloppine": 2.7,
+    "spinaci": 0.3,
+    "stinco_di_maiale": 6,
+    "strudel": 2.0,
+    "zucchine_impanate": 1.8,
+    "zucchine_umido": 0.7,
+}
