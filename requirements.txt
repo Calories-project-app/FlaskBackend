@@ -1,6 +1,6 @@
 flask>=2.0.0
 gunicorn>=20.1.0
-opencv-python>=4.9.0
+opencv-contrib-python
 # Base ----------------------------------------
 hydra-core>=1.2.0
 matplotlib>=3.2.2
