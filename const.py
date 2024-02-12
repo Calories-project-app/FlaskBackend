@@ -1,18 +1,20 @@
 calorie_per_unit = {
     "arancia": 45,
-    "torta_ananas": 130,
-    "torta_cioccolato_e_pere": 130,
-    "torta_crema": 130,
-    "torta_crema_2": 130,
-    "torta_salata_-alla_valdostana-": 130,
-    "torta_salata_3": 130,  # Assuming similar to above
+    "torta_ananas": 230,
+    "torta_cioccolato_e_pere": 230,
+    "torta_crema": 230,
+    "torta_crema_2": 230,
+    "torta_salata_-alla_valdostana-": 230,
+    "torta_salata_3": 230,  # Assuming similar to above
     "torta_salata_rustica_-zucchine-": 125,
     "torta_salata_spinaci_e_ricotta": 120,
-    "banane": 110,
+    "banane": 88,
     "pane": 130,
-    "yogurt": 102,
-    "budino": 60,
+    "yogurt": 60,
+    "budino": 120,
 }
+
+
 calorie_per_sq_inch = {
     "arrosto": 2.5,  # Example adjustment for a dense meat dish
     "arrosto_di_vitello": 10,  # Slightly higher for veal
@@ -149,8 +151,7 @@ food_translation_simplified = {
     "zucchine_umido": "zucchini dish",
 }
 
-
-calories_per_sq_inch = {
+calorie_per_100_grams = {
     "arrosto": {
         "calories": 155,
         "protein": 2,
@@ -169,60 +170,407 @@ calories_per_sq_inch = {
         "carbs": 0,
         "fat": 1,
     },
-    "carote": 0.4,
-    "cavolfiore": 0.3,
-    "cibo_bianco_non_identificato": 1.5,  # Arbitrary value
-    "cotoletta": 12,  # Fried meat, assuming higher because of frying
-    "crema_zucca_e_fagioli": 1.2,  # Cream soup, lighter
-    "fagiolini": 0.4,
-    "finocchi_gratinati": 0.7,  # Adjusted down for a vegetable dish
-    "finocchi_in_umido": 0.7,  # Similarly adjusted
-    "focaccia_bianca": 2.0,  # Bread, assuming a bit denser
-    "guazzetto_di_calamari": 1.5,  # Seafood, lighter
-    "insalata_mista": 0.2,  # Very light, mostly water content
-    "lasagna_alla_bolognese": 9,  # Pasta dish, but with layers and meat
-    "mandarini": 0.5,
-    "medaglioni_di_carne": 8,
-    "mele": 0.5,
-    "merluzzo_alle_olive": 1.7,  # Fish dish, assuming lighter than meat
-    "minestra": 1.0,  # Soup, lighter
-    "minestra_lombarda": 1.1,  # Similar to above
-    "orecchiette_-ragu-": 3.5,  # Pasta, as per your guideline
-    "passato_alla_piemontese": 1.1,
-    "pasta_bianco": 3.5,  # Aligning with your pasta calorie density
-    "pasta_cozze_e_vongole": 3.5,
-    "pasta_e_ceci": 3.5,
-    "pasta_e_fagioli": 3.5,
-    "pasta_mare_e_monti": 3.5,
-    "pasta_pancetta_e_zucchine": 3.5,
-    "pasta_pesto_besciamella_e_cornetti": 3.5,
-    "pasta_ricotta_e_salsiccia": 3.5,
-    "pasta_sugo": 3.5,
-    "pasta_sugo_pesce": 3.5,
-    "pasta_sugo_vegetariano": 3.5,
-    "pasta_tonno": 3.5,
-    "pasta_tonno_e_piselli": 3.5,
-    "pasta_zafferano_e_piselli": 3.5,
-    "patate-pure": 1.3,  # Mashed potatoes, assuming lighter
-    "patate-pure_prosciutto": 1.5,
-    "patatine_fritte": 2.2,  # Fries, assuming the oil adds calories
-    "pere": 0.5,
-    "pesce_-filetto-": 1.7,
-    "pesce_2_-filetto-": 1.7,
-    "piselli": 0.4,
-    "pizza": 2.5,  # Assuming a higher density because of toppings
-    "pizzoccheri": 3.5,  # Pasta dish
-    "polpette_di_carne": 6,
-    "riso_bianco": 1.2,  # Rice, assuming it's less dense than pasta
-    "riso_sugo": 1.4,
-    "roastbeef": 2.5,
-    "rosbeef": 2.5,
-    "rucola": 0.1,
-    "salmone_-da_menu_sembra_spada_in_realta-": 1.8,
-    "scaloppine": 2.7,
-    "spinaci": 0.3,
-    "stinco_di_maiale": 6,
-    "strudel": 2.0,
-    "zucchine_impanate": 1.8,
-    "zucchine_umido": 0.7,
+    "carote": {
+        "calories": 41,
+        "protein": 0.9,
+        "carbs": 9.6,
+        "fat": 0.2,
+    },
+    "cavolfiore": {
+        "calories": 25,
+        "protein": 1.9,
+        "carbs": 4.9,
+        "fat": 0.3,
+    },
+    "cibo_bianco_non_identificato": {
+        "calories": 100,
+        "protein": 0,
+        "carbs": 25,
+        "fat": 0,
+    },
+    "cotoletta": {
+        "calories": 250,
+        "protein": 20,
+        "carbs": 15,
+        "fat": 18,
+    },
+    "crema_zucca_e_fagioli": {
+        "calories": 120,
+        "protein": 3,
+        "carbs": 18,
+        "fat": 4,
+    },
+    "fagiolini": {
+        "calories": 31,
+        "protein": 2,
+        "carbs": 7,
+        "fat": 0.2,
+    },
+    "finocchi_gratinati": {
+        "calories": 120,
+        "protein": 3,
+        "carbs": 17,
+        "fat": 5,
+    },
+    "finocchi_in_umido": {
+        "calories": 20,
+        "protein": 1.2,
+        "carbs": 3.7,
+        "fat": 0.1,
+    },
+    "focaccia_bianca": {
+        "calories": 250,
+        "protein": 9,
+        "carbs": 46,
+        "fat": 3.5,
+    },
+    "guazzetto_di_calamari": {
+        "calories": 150,
+        "protein": 15,
+        "carbs": 8,
+        "fat": 5,
+    },
+    "insalata_mista": {
+        "calories": 15,
+        "protein": 1,
+        "carbs": 3,
+        "fat": 0.2,
+    },
+    "lasagna_alla_bolognese": {
+        "calories": 140,
+        "protein": 8,
+        "carbs": 15,
+        "fat": 6,
+    },
+    "mandarini": {
+        "calories": 53,
+        "protein": 0.8,
+        "carbs": 13.3,
+        "fat": 0.3,
+    },
+    "medaglioni_di_carne": {
+        "calories": 180,
+        "protein": 22,
+        "carbs": 0,
+        "fat": 10,
+    },
+    "mele": {
+        "calories": 52,
+        "protein": 0.3,
+        "carbs": 14,
+        "fat": 0.2,
+    },
+    "merluzzo_alle_olive": {
+        "calories": 115,
+        "protein": 17,
+        "carbs": 0,
+        "fat": 5,
+    },
+    "minestra": {
+        "calories": 50,
+        "protein": 2,
+        "carbs": 10,
+        "fat": 0.5,
+    },
+    "minestra_lombarda": {
+        "calories": 70,
+        "protein": 4,
+        "carbs": 15,
+        "fat": 1,
+    },
+    "orecchiette_-ragu-": {
+        "calories": 180,
+        "protein": 9,
+        "carbs": 30,
+        "fat": 3,
+    },
+    "passato_alla_piemontese": {
+        "calories": 120,
+        "protein": 2,
+        "carbs": 10,
+        "fat": 8,
+    },
+    "pasta_bianco": {
+        "calories": 130,
+        "protein": 5,
+        "carbs": 25,
+        "fat": 1,
+    },
+    "pasta_cozze_e_vongole": {
+        "calories": 180,
+        "protein": 8,
+        "carbs": 30,
+        "fat": 2,
+    },
+    "pasta_e_ceci": {
+        "calories": 120,
+        "protein": 5,
+        "carbs": 20,
+        "fat": 2,
+    },
+    "pasta_e_fagioli": {
+        "calories": 150,
+        "protein": 6,
+        "carbs": 25,
+        "fat": 3,
+    },
+    "pasta_mare_e_monti": {
+        "calories": 160,
+        "protein": 10,
+        "carbs": 20,
+        "fat": 5,
+    },
+    "pasta_pancetta_e_zucchine": {
+        "calories": 200,
+        "protein": 8,
+        "carbs": 35,
+        "fat": 4,
+    },
+    "pasta_pesto_besciamella_e_cornetti": {
+        "calories": 220,
+        "protein": 7,
+        "carbs": 40,
+        "fat": 5,
+    },
+    "pasta_ricotta_e_salsiccia": {
+        "calories": 230,
+        "protein": 9,
+        "carbs": 35,
+        "fat": 6,
+    },
+    "pasta_sugo": {
+        "calories": 160,
+        "protein": 8,
+        "carbs": 30,
+        "fat": 2,
+    },
+    "pasta_sugo_pesce": {
+        "calories": 180,
+        "protein": 10,
+        "carbs": 25,
+        "fat": 5,
+    },
+    "pasta_sugo_vegetariano": {
+        "calories": 150,
+        "protein": 5,
+        "carbs": 30,
+        "fat": 2,
+    },
+    "pasta_tonno": {
+        "calories": 170,
+        "protein": 10,
+        "carbs": 25,
+    },
+    "pasta_tonno_e_piselli": {
+        "calories": 200,
+        "protein": 8,
+        "carbs": 30,
+        "fat": 4,
+    },
+    "pasta_zafferano_e_piselli": {
+        "calories": 190,
+        "protein": 6,
+        "carbs": 35,
+        "fat": 3,
+    },
+    "patate-pure": {
+        "calories": 83,
+        "protein": 1.9,
+        "carbs": 19.7,
+        "fat": 0.1,
+    },
+    "patate-pure_prosciutto": {
+        "calories": 190,
+        "protein": 5,
+        "carbs": 12,
+        "fat": 12,
+    },
+    "patatine_fritte": {
+        "calories": 312,
+        "protein": 3,
+        "carbs": 48,
+        "fat": 12,
+    },
+    "pere": {
+        "calories": 57,
+        "protein": 0.4,
+        "carbs": 15,
+        "fat": 0.1,
+    },
+    "pesce_-filetto-": {
+        "calories": 100,
+        "protein": 22,
+        "carbs": 0,
+        "fat": 1.5,
+    },
+    "pesce_2_-filetto-": {
+        "calories": 100,
+        "protein": 22,
+        "carbs": 0,
+        "fat": 1.5,
+    },
+    "piselli": {
+        "calories": 81,
+        "protein": 5,
+        "carbs": 14,
+        "fat": 0.4,
+    },
+    "pizza": {
+        "calories": 266,
+        "protein": 11,
+        "carbs": 31,
+        "fat": 10,
+    },
+    "pizzoccheri": {
+        "calories": 335,
+        "protein": 11,
+        "carbs": 63,
+        "fat": 4,
+    },
+    "polpette_di_carne": {
+        "calories": 260,
+        "protein": 15,
+        "carbs": 9,
+        "fat": 19,
+    },
+    "riso_bianco": {
+        "calories": 130,
+        "protein": 2.4,
+        "carbs": 28.7,
+        "fat": 0.3,
+    },
+    "riso_sugo": {
+        "calories": 160,
+        "protein": 3,
+        "carbs": 27,
+        "fat": 4,
+    },
+    "roastbeef": {
+        "calories": 250,
+        "protein": 30,
+        "carbs": 0,
+        "fat": 14,
+    },
+    "rosbeef": {
+        "calories": 250,
+        "protein": 30,
+        "carbs": 0,
+        "fat": 14,
+    },
+    "rucola": {
+        "calories": 25,
+        "protein": 2,
+        "carbs": 3,
+        "fat": 1,
+    },
+    "scaloppine": {
+        "calories": 300,
+        "protein": 25,
+        "carbs": 5,
+        "fat": 18,
+    },
+    "spinaci": {
+        "calories": 23,
+        "protein": 2,
+        "carbs": 3,
+        "fat": 0.4,
+    },
+    "stinco_di_maiale": {
+        "calories": 350,
+        "protein": 20,
+        "carbs": 10,
+        "fat": 25,
+    },
+    "strudel": {
+        "calories": 350,
+        "protein": 4,
+        "carbs": 40,
+        "fat": 20,
+    },
+    "zucchine_impanate": {
+        "calories": 200,
+        "protein": 5,
+        "carbs": 20,
+        "fat": 12,
+    },
+    "zucchine_umido": {
+        "calories": 50,
+        "protein": 2,
+        "carbs": 5,
+        "fat": 1.5,
+    },
+    "salmone-da_menu_sembra_spada_in_realta-": {
+        "calories": 200,
+        "protein": 22,
+        "carbs": 0,
+        "fat": 12,
+    },
+}
+
+nutrient_per_unit = {
+    "arancia": {
+        "protein": 2,
+        "carbs": 0,
+        "fat": 1,
+    },
+    "torta_ananas": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_cioccolato_e_pere": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_crema": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_crema_2": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_-alla_valdostana-": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_3": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },  # Assuming similar to above
+    "torta_salata_rustica_-zucchine-": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_spinaci_e_ricotta": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "banane": {
+        "protein": 1.1,
+        "carbs": 23,
+        "fat": 0.3,
+    },
+    "pane": {
+        "protein": 4.5,
+        "carbs": 25,
+        "fat": 3.2,
+    },
+    "yogurt": {
+        "protein": 10,
+        "carbs": 3.6,
+        "fat": 0.4,
+    },
+    "budino": {
+        "protein": 3.2,
+        "carbs": 20,
+        "fat": 3.2,
+    },
 }

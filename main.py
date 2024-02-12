@@ -8,7 +8,13 @@ from flask import (
 )
 from ultralytics import YOLO
 import cv2
-from const import calorie_per_unit, calorie_per_sq_inch, food_translation_simplified
+from const import (
+    calorie_per_unit,
+    calorie_per_sq_inch,
+    food_translation_simplified,
+    calorie_per_100_grams,
+    nutrient_per_unit,
+)
 
 app = Flask(__name__, template_folder="templates")
 
@@ -18,6 +24,33 @@ def get_calorie(class_name, real_food_area):
         return calorie_per_unit[class_name]
     else:
         return round((calorie_per_sq_inch[class_name] * real_food_area), 2)
+
+
+def get_nutrient(class_name, real_food_area):
+    if class_name in nutrient_per_unit:
+        return nutrient_per_unit[class_name]
+    else:
+        calories = round((calorie_per_sq_inch[class_name] * real_food_area), 2)
+        fat = calorie_per_100_grams[class_name]["fat"]
+        protein = calorie_per_100_grams[class_name]["protein"]
+        carbs = calorie_per_100_grams[class_name]["carbs"]
+        calories_per_100_grams = calorie_per_100_grams[class_name]["calories"]
+        nutrient = calculate_nutrient(
+            calories, calories_per_100_grams, fat, protein, carbs
+        )
+        return nutrient
+
+
+def calculate_nutrient(real_calorie, calorie, fat, protein, carbs):
+    gram = real_calorie / calorie
+    real_fat = round((gram * fat), 2)
+    real_protein = round((gram * protein), 2)
+    real_carbs = round((gram * carbs), 2)
+    return {
+        "protein": real_protein,
+        "carbs": real_carbs,
+        "fat": real_fat,
+    }
 
 
 def translate_food_list(food_list, translation_dict):
@@ -60,10 +93,20 @@ def detect():
         image_file = request.files.get("image")
         if image_file:
             img = cv2.imread(image_file)
-            results, calories_sum = detect_objects_on_image(img)
+            results, calories_sum, fat_sum, protein_sum, carb_sum = (
+                detect_objects_on_image(img)
+            )
         else:
             results = {"error": "Image file not found in the request."}
-    return jsonify({"results": results, "calories": calories_sum})
+    return jsonify(
+        {
+            "results": results,
+            "calories": calories_sum,
+            "protein_sum": protein_sum,
+            "fat_sum": fat_sum,
+            "carb_sum": carb_sum,
+        }
+    )
 
 
 def detect_objects_on_image(buf):
@@ -75,6 +118,9 @@ def detect_objects_on_image(buf):
 
     output = []
     calories_sum = 0
+    fat_sum = 0
+    protein_sum = 0
+    carb_sum = 0
     for i, box in enumerate(results[0].boxes):
         if results[0].masks:
             points_rollers = results[0].masks[i].xy[0].astype(int)
@@ -85,9 +131,27 @@ def detect_objects_on_image(buf):
             english_class_name = food_translation_simplified[class_name]
             real_food_area = masked_food_pixels / pixels_per_inch_sq
             food_calories = get_calorie(class_name, real_food_area)
+            food_nutrients = get_nutrient(class_name, real_food_area)
             calories_sum += food_calories
-            output.append([english_class_name, food_calories])
-    return output, round(calories_sum, 2)
+            fat_sum += food_nutrients["fat"]
+            protein_sum += food_nutrients["protein"]
+            carb_sum += food_nutrients["carbs"]
+            output.append(
+                {
+                    "name": english_class_name,
+                    "calories": food_calories,
+                    "protein": food_nutrients["protein"],
+                    "carbs": food_nutrients["carbs"],
+                    "fat": food_nutrients["fat"],
+                }
+            )
+    return (
+        output,
+        round(calories_sum, 2),
+        round(fat_sum, 2),
+        round(protein_sum, 2),
+        round(carb_sum, 2),
+    )
 
 
 if __name__ == "__main__":
