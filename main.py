@@ -6,7 +6,7 @@ from flask import (
     jsonify,
     send_from_directory,
 )
-import cv2
+from PIL import Image
 from service import detect_objects_on_image
 
 app = Flask(__name__, template_folder="templates")
@@ -25,11 +25,11 @@ def main():
 @app.route("/api/predict", methods=["POST"])
 def detect():
     results = {"error": "No image provided."}
-    calories_sum = 0
+    calories_sum, fat_sum, protein_sum, carb_sum = 0, 0, 0, 0
     if request.method == "POST":
         image_file = request.files.get("image")
         if image_file:
-            img = cv2.imread(image_file)
+            img = Image.open(image_file)
             results, calories_sum, fat_sum, protein_sum, carb_sum = (
                 detect_objects_on_image(img)
             )
