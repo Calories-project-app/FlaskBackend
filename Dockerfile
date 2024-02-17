@@ -9,10 +9,6 @@ COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade -r requirements.txt
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
-RUN apt-get clean autoclean \
-    apt-get autoremove --yes \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/
-
 COPY . .
 
 ENV FLASK_APP=main.py
