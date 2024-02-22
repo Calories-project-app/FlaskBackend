@@ -573,14 +573,14 @@ calorie_per_100_grams = {
 
 
 thai_calorie_per_unit = {
-    "boiled egg": "40",
-    "fried egg": "100",
-    "omelet": "250",
+    "boiled egg": 40,
+    "fried egg": 100,
+    "omelet": 250,
 }
 
 thai_calorie_per_sq_inch = {
-    "khamoo": 2.5,  # Pork leg rice, considering it's a meat dish with rice
-    "khaomungai": 2.0,  # Chicken and rice, slightly less due to leaner meat
+    "kha moo": 2.5,  # Pork leg rice, considering it's a meat dish with rice
+    "khao mun gai": 2.0,  # Chicken and rice, slightly less due to leaner meat
     "larb": 1.8,  # A salad with minced pork, assuming less due to mixed composition
     "moo daeng": 2.5,  # Red pork, considering the sauce and meat
     "moo kra tiem": 2.7,  # Fried garlic pork, assuming slightly higher due to frying
@@ -594,8 +594,8 @@ thai_calorie_per_sq_inch = {
 thai_food_translation_simplified = {
     "boiled egg": "ไข่ต้ม",
     "fried egg": "ไข่ดาว",
-    "khamoo": "ข้าวขาหมู",
-    "khaomungai": "ข้าวมันไก่",
+    "kha moo": "ข้าวขาหมู",
+    "khao mun gai": "ข้าวมันไก่",
     "larb": "ลาบหมู",
     "moo daeng": "หมูแดง",
     "moo kra tiem": "หมูกะเทียม",
@@ -607,13 +607,13 @@ thai_food_translation_simplified = {
     "somtam": "ส้มตำ",
 }
 thai_calorie_per_100_grams = {
-    "khamoo": {
+    "kha moo": {
         "calories": 150,
         "protein": 20,
         "carbs": 0,
         "fat": 5,
     },  # Pork leg rice, considering it's a meat dish with rice
-    "khaomungai": {
+    "khao mun gai": {
         "calories": 164,
         "protein": 22.5,
         "carbs": 0,

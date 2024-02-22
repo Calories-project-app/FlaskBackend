@@ -30,8 +30,9 @@ def detect():
         image_file = request.files.get("image")
         if image_file:
             img = Image.open(image_file)
+            w, h = img.size
             results, calories_sum, fat_sum, protein_sum, carb_sum = (
-                detect_objects_on_image(img)
+                detect_objects_on_image(img, w, h)
             )
         else:
             results = {"error": "Image file not found in the request."}
