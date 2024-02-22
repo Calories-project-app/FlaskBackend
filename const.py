@@ -13,8 +13,6 @@ calorie_per_unit = {
     "yogurt": 60,
     "budino": 120,
 }
-
-
 calorie_per_sq_inch = {
     "arrosto": 2.5,  # Example adjustment for a dense meat dish
     "arrosto_di_vitello": 10,  # Slightly higher for veal
@@ -150,7 +148,73 @@ food_translation_simplified = {
     "zucchine_impanate": "zucchini dish",
     "zucchine_umido": "zucchini dish",
 }
-
+nutrient_per_unit = {
+    "arancia": {
+        "protein": 2,
+        "carbs": 0,
+        "fat": 1,
+    },
+    "torta_ananas": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_cioccolato_e_pere": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_crema": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_crema_2": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_-alla_valdostana-": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_3": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },  # Assuming similar to above
+    "torta_salata_rustica_-zucchine-": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "torta_salata_spinaci_e_ricotta": {
+        "protein": 1.7,
+        "carbs": 40,
+        "fat": 6,
+    },
+    "banane": {
+        "protein": 1.1,
+        "carbs": 23,
+        "fat": 0.3,
+    },
+    "pane": {
+        "protein": 4.5,
+        "carbs": 25,
+        "fat": 3.2,
+    },
+    "yogurt": {
+        "protein": 10,
+        "carbs": 3.6,
+        "fat": 0.4,
+    },
+    "budino": {
+        "protein": 3.2,
+        "carbs": 20,
+        "fat": 3.2,
+    },
+}
 calorie_per_100_grams = {
     "arrosto": {
         "calories": 155,
@@ -507,70 +571,118 @@ calorie_per_100_grams = {
     },
 }
 
-nutrient_per_unit = {
-    "arancia": {
-        "protein": 2,
+
+thai_calorie_per_unit = {
+    "boiled egg": "40",
+    "fried egg": "100",
+    "omelet": "250",
+}
+
+thai_calorie_per_sq_inch = {
+    "khamoo": 2.5,  # Pork leg rice, considering it's a meat dish with rice
+    "khaomungai": 2.0,  # Chicken and rice, slightly less due to leaner meat
+    "larb": 1.8,  # A salad with minced pork, assuming less due to mixed composition
+    "moo daeng": 2.5,  # Red pork, considering the sauce and meat
+    "moo kra tiem": 2.7,  # Fried garlic pork, assuming slightly higher due to frying
+    "pad cee eew": 1.9,  # Stir-fried noodles, considering oil and ingredients
+    "pad thai": 2.0,  # Stir-fried noodle dish, similar reasoning as Pad Cee Eew
+    "rad nha": 1.8,  # Noodles with gravy, possibly lighter due to the sauce
+    "rice": 1.3,  # Plain rice, considering its basic and staple nature
+    "somtam": 0.5,  # Papaya salad, assuming lower due to primarily being vegetables
+}
+
+thai_food_translation_simplified = {
+    "boiled egg": "ไข่ต้ม",
+    "fried egg": "ไข่ดาว",
+    "khamoo": "ข้าวขาหมู",
+    "khaomungai": "ข้าวมันไก่",
+    "larb": "ลาบหมู",
+    "moo daeng": "หมูแดง",
+    "moo kra tiem": "หมูกะเทียม",
+    "omelet": "ไข่เจียว",
+    "pad cee eew": "ผัดซีอิ้ว",
+    "pad thai": "ผัดไทย",
+    "rad nha": "ราดหน้า",
+    "rice": "ข้าว",
+    "somtam": "ส้มตำ",
+}
+thai_calorie_per_100_grams = {
+    "khamoo": {
+        "calories": 150,
+        "protein": 20,
         "carbs": 0,
-        "fat": 1,
-    },
-    "torta_ananas": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_cioccolato_e_pere": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_crema": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_crema_2": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_salata_-alla_valdostana-": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_salata_3": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },  # Assuming similar to above
-    "torta_salata_rustica_-zucchine-": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "torta_salata_spinaci_e_ricotta": {
-        "protein": 1.7,
-        "carbs": 40,
-        "fat": 6,
-    },
-    "banane": {
-        "protein": 1.1,
-        "carbs": 23,
-        "fat": 0.3,
-    },
-    "pane": {
-        "protein": 4.5,
-        "carbs": 25,
-        "fat": 3.2,
-    },
-    "yogurt": {
+        "fat": 5,
+    },  # Pork leg rice, considering it's a meat dish with rice
+    "khaomungai": {
+        "calories": 164,
+        "protein": 22.5,
+        "carbs": 0,
+        "fat": 4.6,
+    },  # Chicken and rice, slightly less due to leaner meat
+    "larb": {
+        "calories": 65,
+        "protein": 11,
+        "carbs": 9.4,
+        "fat": 2.5,
+    },  # A salad with minced pork, assuming less due to mixed composition
+    "moo daeng": {
+        "calories": 65,
         "protein": 10,
-        "carbs": 3.6,
-        "fat": 0.4,
-    },
-    "budino": {
-        "protein": 3.2,
+        "carbs": 2.5,
+        "fat": 4,
+    },  # Red pork, considering the sauce and meat
+    "moo kra tiem": {
+        "calories": 50,
+        "protein": 8,
+        "carbs": 0.3,
+        "fat": 3,
+    },  # Fried garlic pork, assuming slightly higher due to frying
+    "pad cee eew": {
+        "calories": 200,
+        "protein": 13,
+        "carbs": 21,
+        "fat": 12,
+    },  # Stir-fried noodles, considering oil and ingredients
+    "pad thai": {
+        "calories": 239,
+        "protein": 9,
         "carbs": 20,
-        "fat": 3.2,
+        "fat": 13,
+    },  # Stir-fried noodle dish, similar reasoning as Pad Cee Eew
+    "rad nha": {
+        "calories": 200,
+        "protein": 13.3,
+        "carbs": 21,
+        "fat": 10,
+    },  # Noodles with gravy, possibly lighter due to the sauce
+    "rice": {
+        "calories": 155,
+        "protein": 2.7,
+        "carbs": 28,
+        "fat": 0.3,
+    },  # Plain rice, considering its basic and staple nature
+    "somtam": {
+        "calories": 60,
+        "protein": 0.7,
+        "carbs": 15.7,
+        "fat": 0.4,
+    },  # Papaya salad, assuming lower due to primarily being vegetables
+}
+
+thai_nutrient_per_unit = {
+    "boiled egg": {
+        "protein": 4,
+        "carbs": 0.5,
+        "fat": 1.6,
+    },
+    "fried egg": {
+        "protein": 6.3,
+        "carbs": 0.4,
+        "fat": 9.3,
+    },
+    "omelet": {
+        "protein": 8,
+        "carbs": 0.5,
+        "fat": 10,
     },
 }
